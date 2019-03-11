@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import "./Carousel.css";
+import Grid from "./Grid";
+
 class Carousel extends Component {
     render() {
-        console.log(this.props.data.img)
+        // var color = "hello";
         return (
             <p className="carousel">
-                {/* <div id="arrowLeft"></div> */}
+                {/* <Grid color={color} /> */}
                 <img id="carouselImage" src={this.props.data.img} alt='a' />
-                {/* <div id="arrowRight"></div> */}
             </p>
         );
     }

@@ -22,39 +22,39 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: data[0].img,
-      counter: 0
+      index: 0
     }
 
   }
   prev = () => {
-    if (this.state.counter > 0) {
+    if (this.state.index > 0) {
       this.setState({
-        index: data[this.state.counter--].img
+        index: this.state.index - 1
       })
     }
   }
   next = () => {
+    const index = this.state.index === data.length - 1 ? 0 : this.state.index + 1
     this.setState({
-      index: data[this.state.counter++].img
+      index
     })
   }
-  click = (img) => {
+  click = (index) => {
     this.setState({
-      index: img
+      index
     });
   }
   render() {
     return (
       <div className="container">
         <p onClick={this.prev} id="arrowLeft"></p>
-        <Carousel img={this.state.index} />
+        <Carousel data={data[this.state.index]} />
         <p onClick={this.next} id="arrowRight"></p>
         {
-          data.map((item) => {
+          data.map((item, ind) => {
             return (
-              <div id="images" onClick={() => this.click(item.img)}>
-                <Grid key={item.id} photo={item} />
+              <div key={item.id} id="images" onClick={() => this.click(ind)}>
+                <Grid photo={item} />
               </div>
             )
           })

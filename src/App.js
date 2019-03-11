@@ -28,9 +28,11 @@ class Gallery extends Component {
 
   }
   prev = () => {
-    this.setState({
-      index: data[this.state.counter--].img
-    })
+    if (this.state.counter > 0) {
+      this.setState({
+        index: data[this.state.counter--].img
+      })
+    }
   }
   next = () => {
     this.setState({

@@ -8,9 +8,9 @@ class Grid extends Component {
 
     render() {
         let value = "0px";
-        let { photo } = this.props;
-        let { index } = this.props;
-        if (index === photo.id) {
+
+        let { photo, index, ind } = this.props;
+        if (index === ind) {
             value = "5px";
         }
         return (
@@ -21,4 +21,4 @@ class Grid extends Component {
 
 export default Grid;
 // border={color}s
-// border={color}
+// border={color}s

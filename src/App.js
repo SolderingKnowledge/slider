@@ -54,7 +54,7 @@ class Gallery extends Component {
           data.map((item, ind) => {
             return (
               <div key={item.id} id="images" onClick={() => this.click(ind)}>
-                <Grid index={this.state.index} photo={item} />
+                <Grid index={this.state.index} ind={ind} photo={item} />
               </div>
             )
           })
